@@ -1,0 +1,61 @@
+Git notes
+---------
+
+Configuration
+    o system
+        + unix, /etc/gitconfig
+        + windows, <git install>/etc/gitconfig
+        + git config --system ...
+    o user
+        + unix, ~/.gitconfig
+        + windows, $HOME/.gitconfig
+        + git config --global ...
+    o project
+        + <local repo>/.git/config
+        + git config ...
+    o config parameters
+        + required
+            - user.name
+            - user.email
+
+Commit Messages
+    o first line, summary, max 50 chars
+    o second line, blank
+    o rest, more descriptive, max 72 chars each
+
+Architecture
+    o two tree
+        + common in SVN and others
+        + two trees, repository and workarea
+        + checkout, repository -> workarea
+        + commit, workarea -> repository
+    o three tree
+        + used by git
+        + staging is the third tree
+        + checkout, repository -> workarea
+        + commit, staging -> repository
+        + add, workarea -> staging
+    o HEAD
+        + pointer to tip of current branch in repository
+            - really? even it we didn't checkout the tip??
+            - yes, this is true, if you checkout something other than the tip, HEAD
+                points at the tip, and you are in a detached state where you cannot commut,
+                you would first have to create a branch at that point
+        + pointer to what was last checked out
+            - this sounds more accurate, and so does ...
+        + pointer to parent of next commit
+    o commands
+        + git figures out an add/rm pair are a rename if the content is more than 50% the same
+
+Stash
+    o git stash save [comment], comment makes it way easier to identify when you
+            have multiple saves
+    o git stash show -p stash@{0}, shows patch diff format
+
+Remotes
+    o origin/master is like a branch, that tries to stay in sync with what is
+            in the remote repo
+        + git fetch updates the origin/master branch ONLY
+        + merge needed to copy origin/master changes to local master
+        + git push copies our local master commits to the remote master, then
+                duplicates them in the origin/master branch
