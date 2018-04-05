@@ -1,0 +1,99 @@
+The Scrum Guide
+---------------
+
+https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow
+
+    o definition: A framework for productively and creatively delivering products of the highest possible value
+    o lightweight, simple to understand
+    o it's NOT a process
+    o framework consists of:
+        + scrum teams
+        + associated roles
+        + events
+        + artifacts
+        + rules
+    o founded on empirical process control theory
+        - knowledge comes from experience
+        - decisions made based on what is known
+    o so use iterative, incremental approach
+        + optimized predictibility
+        + controls risk
+    o three pillars:
+        + transparency
+            - stakeholders must be able to track progress
+            - requires common, standard way of communicating
+            - clear definition of done is crucial
+        + inspection
+            - watching for undesirable variances
+        + adaptation
+            - make changes when deviation detected
+    o events for inspection and adaptation
+        + sprint planning
+        + daily scrum
+        + sprint review
+        + sprint retrospective
+    o scrum team
+        + product owner
+            - responsible for maximizing the value of the product
+            - sole person responsible for managing backlog
+            - may get assistance, but is accountable
+            - only one person, cannot be overridden, with regard to
+                . product backlog
+                . direction of development team
+        + development team
+            - do the work of creating a releasable increment of the product
+            - they own decisions of how to implement the backlog
+            - cross-functional, to minimize outside dependencies
+            - no titles, no sub-teams, no exceptions
+            - entire team owns accountability for delivering the release
+            - 3 to 9 members
+        + scrum master
+            - responsible for ensuring scrum is enacted
+            - manages outside interactions with the team
+            - helps product owner create effective backlog
+            - facilitates scrum events
+            - removes impediments for the team
+    o events
+        + the sprint
+            - limited to one month at most
+            - has a clear goal of a done, releasable increment of the product
+            - disallows changes that jeopardize the goal
+            - does not allow quality to be sacrificed
+            - rarely canceled, but can be if goal no longer makes sense
+        + spring planning
+            - time-boxed, e.g., max 8 hours for a one month sprint (3-5%)
+            - only development team can decide how many backlog items to accept
+            - define the "sprint goal", why the increment is being created
+        + daily scrum
+            - time-boxed to around 15 minutes
+            - excludes product owner
+            - team members answer
+                . what did i do yesterday
+                . what will i do today
+                . are there any impediments to achieving the spring goal
+        + sprint review
+            - time-box to 4 hours for a one month sprint
+            - includes entire scrum team, plus stakeholders
+            - product owner reviews done and not done items
+            - development team
+                . discusses what went well
+                . problems encountered and how they were resolved
+                . demos new functionality (what was "done")
+                . product owner reviews state of the backlog
+                . preparation for next sprint planning
+        + sprint retrospective
+            - after sprint review but before next sprint planning
+            - time-box three hours for one month sprint (relative)
+            - inspect sprint regarding people, relationships, process, tools
+            - list what went well
+            - list potential improvements and changes for next sprint to achieve them
+                . consider ways definition of done can be enhanced to improve quality
+        + artifacts
+            - product backlog
+                . development team owns estimates
+                . total work remaining for goal(s) must be available
+            - sprint backlog
+                . may be added to or deleted from to achieve the sprint goal
+                . solely owned by the development team (not product owner)
+            
+            
