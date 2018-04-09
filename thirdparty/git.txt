@@ -159,7 +159,11 @@ Stash
 Remotes
     o origin/master is like a branch, that tries to stay in sync with what is
             in the remote repo
+        + it cannot be checked out, git wants to ensure it stays in sync with the remote
         + git fetch updates the origin/master branch ONLY
         + merge needed to copy origin/master changes to local master
         + git push copies our local master commits to the remote master, then
                 duplicates them in the origin/master branch
+        + git pull = git fetch + git merge
+            - can be confusing when it fails, knowing which step failed
+
