@@ -1,0 +1,37 @@
+JIRA
+----
+
+Searching
+
+    o Quick Search
+        + on all screens, upper right
+            - type "/" to go there
+        + type a full ISSUE identifier (ABC-123)
+        + if in the ABC project, can just type 123
+        + it also accepts a simple syntax, like "my open bugs"
+        + full syntax: https://confluence.atlassian.com/servicedeskserver039/quick-searching-942863779.html
+        
+    o Issues --> Search for issues
+        + goes to the Issue navigation screen
+        + click [New Filter] (upper left) to clear current selections
+        + manage Favorites from here
+        + with Advanced (free form input), use Quick Search to easily create valid search strings
+        
+    o JQL
+        + JIRA Query Language
+        + 
+        
+    o Manage Filters
+        + subscribing means it will run and email you a report
+            - you define how frequently
+            
+    o Dashboards
+    
+    o Project Reports
+    
+    o Shortcuts
+        + "?" displays a table of all shortcuts
+        + they don't work in a text edit field (since many are simply letters)
+        
+    o Solu
+        + 
