@@ -18,7 +18,7 @@ Configuration
             - user.name
             - user.email
 
-Commit Messages
+Commit messages
     o first line, summary, max 50 chars
     o second line, blank
     o rest, more descriptive, max 72 chars each
@@ -47,6 +47,110 @@ Architecture
     o commands
         + git figures out an add/rm pair are a rename if the content is more than 50% the same
 
+Undoing changes
+    o undoing a working changes
+        + git checkout -- <file to revert>
+            - "--" is a placeholder that says remain in current branch
+    o unstaging a change
+        + git reset HEAD <file to unstage>
+            - puts change back in working area only
+            - this can work even if there are unstaged changes to the same file,
+                (not sure if will be unable to merge all staged changes with any
+                unstaged changes, i.e., can there be merge conflicts?)
+    o amending a commit
+        + can only modify the HEAD commit
+        + git commit --amend ...
+            - this modifies the HEAD commit (giving it a new SHA-1), it does
+                not create a new one
+    o reverting to an older version of a file   
+        + git checkout 15065763 -- resources.html
+            - first arg to checkout is a branch or a SHA-1
+            - the following "--" says current branch, meaning prior arg was a SHA-1
+            - if no file were named, we would be in a detached HEAD state
+            - by specifying a file, we are still working at the tip of the branch
+            - note, the checked out file is staged
+        + git revert <SHA-1>
+            - undoes changes of the specified SHA-1 and does commit
+            - may encounter merge conflicts
+    o git reset
+        + way to modify HEAD (it ALWAYS modifies HEAD)
+        + --soft
+            - does not change staging or working (so commits removed from 
+                repository are still preserved in working)
+        + --mixed (default)
+            - changes staging to match repository
+            - does not change working
+        + --hard
+            - changes staging and working to match repository (commits are
+                completely lost)
+        + all three forms change HEAD to the commit that we reset to, but all
+            subsequent commits still exist in the repository, and we can reset
+            to any of those (but they won't show up in the log, so list them
+            before doing the reset)
+            - HEAD is still the tip of the branch, because if we clone the repository
+                immediately after the reset, it gets the moved HEAD
+            - even if we commit after the reset, those "lost" commits are
+                still there, but they're detached, and may eventually be
+                garbage-collected?
+    o git clean
+        + deletes untracked files (simple)
+        
+Ignoring files
+    o .gitignore
+        + use project/.gitignore
+        + *.dll will ignore .dll files in all directories
+        + build/*.dll will only ignore those in the build directory directly
+        + use ! to "not ignore" files that would be ignored by a wildcard item
+        + good resources:
+            - https://help.github.com/articles/ignoring-files
+            - https://github.com/github/gitignore
+        + global ignores, apply to all repositories on a machine
+            - risky because does not promote consistency among team members
+            - git config --global core.excludesfile <your-path>
+                . e.g., ~/.gitignore_global
+        + default is to not ignore files that are tracked (in the repo)
+            - there is no way to change this, even though demo has a chapter on it
+            - 'git rm --cached' leaves the file in working, but deletes it from the repo,
+                so a subsequent clone of the repo will not include the file
+            - so chapter is really 'how to untrack a file without losing it'
+        + git always ignores empty directories
+            - convention is to add a .gitkeep file to an "empty" directory that you want tracked
+            - note, the .gitkeep file is added to the repo, and comes down with clone
+            
+Navigating the commit tree
+    o tree-ish
+        + fill SHA-1 hash
+            - not "guaranteed" to be unique, but odds are HUGE that it will be
+        + short SHA-1 hash
+            - can be first 4, but 8-10 will almost always be unique
+        + HEAD (-HEAD)
+        + branch/tag reference
+        + ancestry
+            - e.g., -HEAD^, a12b3f^, master^
+            - HEAD^ equivalent to HEAD~1 or HEAD~1
+            - HEAD^^ equivalent to HEAD~2
+            - HEAD~3 better than ^^^
+            
+Branches
+    o command
+        + git branched --merged
+            - lists all branches fully merged into the current branch
+            - does this by looking at ancestry (parent chain) of current branch, to
+                see which other branches HEADs it includes
+        + git branch {-m | --move} old-name new-name
+            - renames a branch
+            
+Merging
+    o fast-forward merge
+        + when HEAD of destination branch in in ancestry of source branch
+        + in this case, no new commit is created, master HEAD is just moved to
+            be the same as the merged branch HEAD (assumes master is destination)
+        + 'git merge -no-ff ...' if you want a commit with a merge message created
+    o conflicts
+        + git merge --abort backs out the merge changes
+    o graphical logging
+        + git log --graph --oneline --all --decorate
+            
 Stash
     o git stash save [comment], comment makes it way easier to identify when you
             have multiple saves
