@@ -1,0 +1,42 @@
+Web Services
+------------
+
+Two categories
+
+SOA Service Oriented Architecture
+
+SOAP
+    o XML
+    o HTTP Post
+
+REST
+    o multiple data formats
+    o HTTP methods
+
+Java Wed Service Standards
+    o JAX-WS (Java API for XML-based Web Services, SOAP)
+    o JAX-RS (Java API for XML-based REST Services, REST)
+
+Contracts
+    o SOAP -> WSDL
+    o REST -> WADL
+
+XML (Extensible Markup Language)
+    o used for
+        + configuration
+        + data exchange
+        + save, manipulate and present application data
+    o unlike HTML, no pre-defined elements
+        + lets us define our own domain specific markup
+    o XSD, XML Schema Definition
+        + grammar (blueprint) for an XML document in a certain context
+            - elements
+            - attributes
+            - namespaces
+            - order
+            - number of occurrences
+            - restrictions
+        + .xsd files
+            - format is defined by W3C
+        + XSD defines a contract
+

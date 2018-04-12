@@ -1,0 +1,56 @@
+SQL notes
+---------
+
+Standard SQL
+    o LIMIT <n>
+        - clause to limit number of returned rows
+    o column nullability
+        - default is to allow NULL values
+        - use NOT NULL to require values
+        - an empty string is considered distinct from NULL
+        - NULL columns are immune from the UNIQUE constraint
+        - NULL values sort as minimum values
+    o no standard syntax for creating auto-populated ID columns
+
+        - SQLite, syntax is PRIMARY KEY constraint on an INTEGER column
+    o LIKE clause
+        - '_' is a wildcard that matches one character
+        - '%' is a wildcard that matches zero or more characters
+        - match is case-insensitive
+    o CASE WHEN a
+        - does a boolean test, and only zero if false
+    o SELECT'ing a boolean expression returns 0 or 1
+        
+Relationships
+    o joining A (left) to B (right)
+    o INNER JOIN, rows where B.key matches A.key
+        - syntax: JOIN ... ON
+    o LEFT OUTER JOIN, INNER JOIN plus rows A.key not matched to a row in B
+        - syntax: LEFT JOIN ... ON
+        - all B columns in select list are NULL
+    o RIGHT OUTER JOIN, INNER JOIN plus rows B.key not matched to a row in A
+        - all A columns in select list are NULL
+        - not supported on many databases (so not standard?)
+        - can be achieved by reversing A and B
+    o FULL OUTER JOIN, combination of all three joins
+        - not supported on many databases
+        
+Strings
+    o use single quotes
+    o concatenation is not standardized
+    o LENGTH(s), not a standard function, but common
+    o SUBSTR(start [, end]), not standard, and one-based
+    o TRIM, because leading and trailing spaces are not trimmed by default
+    o equality testing is case sensitive (unlike LIKE)
+
+Numeric
+    o no standard types or functions
+
+Aggregates
+    o when aggregating on a column, NULL values are ignored
+    
+Sub-selects
+    o a SELECT essentially creates a table, so ...
+    o a sub-SELECT can be used wherever a table is expected
+    o no different that defining a view using the SELECT
+    
