@@ -1,0 +1,29 @@
+SQL Notes
+---------
+
+https://bw.org/ldcsql
+http://sqlite.org/index.html
+
+What is SQL?
+    o SQL, Structured Query Language
+        - pronounced SQL
+        - DDL, Data Definition Language
+        - DML, Data Manipulation Language
+    o Relational Database
+        - data in rows and columns
+    o Standard SQL
+        - single quotes
+        - "LIMIT n" clause limits number of selected rows
+        - DROP TABLE [IF EXISTS] table
+        - empty string is not null
+        - default column definition allows NULL, use NOT NULL to require values
+
+Fundamentals
+    o database is a collection of tables
+    o Standard SQL
+        - SQL 86
+        - SQL 2011 (current)
+    o SQL syntax
+        - use ; for statement terminators
+        - case insensitive
+        - comments '--' for single-line, and java style multi-line
