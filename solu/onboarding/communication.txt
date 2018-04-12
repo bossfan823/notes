@@ -1,0 +1,233 @@
+Communication Skills
+--------------------
+
+Earning customer's trust
+    o five domains of communication
+        - meetings
+        - conference calls
+        - presentations
+        - emails
+        - people
+            
+Meetings
+    o "be careful of your thoughts, they may break into words at any time"
+    o preparation
+        + is there a reason for it
+        + expected outcome (what material)
+        + who needs to be there
+        + where to do it
+    o running the meeting
+        + average adult attention span, 8 mins
+        + distribute agenda prior to the meeting
+            - get feedback
+        + practice delivery of content
+            - with other presenters
+        + start on time
+            - no matter what, no matter who's not there
+        + set ground rule
+            - stay on topic
+            - use a parking lot
+            - mutual respect
+            - no questions are stupid
+            - turn off cell phones
+            - speak up if you need a break
+        + state intent
+        + get buy-in
+            - verbal, yes/no counts
+        + assign tasks specifically
+        + at end, summarize
+        + close on time
+        + have a separate facilitator (note-taker)
+    o follow up after the meeting
+        - use hand-outs
+        - get specifics on task progress
+    o their meeting
+        - prepare your contribution
+        - dress appropriately
+        - arrive on time
+        - turn OFF phone
+        - accept seating pattern, if any
+        - NEVER interrupt (no matter how strongly you disagree)
+        - when speaking, be brief and relevant
+        - address the chair
+        - take notes (pen and paper)
+        - consider everything confidential
+    o final thoughts
+        - sit up straight
+        - no elbows on the table
+        - watch your body language
+        - no hostility
+        - check ego at the door
+        - don't be selling
+
+Conference Calls
+    o before the call
+        + is call needed?
+        + pick appropriate time
+        + have a purpose
+        + have an expected result
+        + create/distribute agenda
+        + keep the group small
+        + know how to use all the equipment
+        + 3 x 3
+            - email agenda and purpose well ahead of time
+            - email materials
+            - re-email all three day of call
+    o during the call
+        + arrive early and start on time
+        + call meeting to order
+        + ground rules
+            - no calling from a cell phone
+            - turn cell phones off
+            - turn off noise makers
+            - use mute if you're not talking
+            - identify yourself and speak up
+            - no side conversations
+        + review the agenda
+        + brief intros
+        + ensure all have materials (to each attendee)
+        + share purpose and intended results
+        + ask for consensus and additional topics
+        + short statements, ask for frequent feedback
+        + don't read the material
+        + don't use a slide deck (use bullets)
+        + set limit to call length
+        + cover next steps before hang up
+    o follow up
+        + publish meeting notes
+    o when it's their call
+        + prepare as if it's your call
+        + be on time
+        + no cell phone
+        + review materials ahead of time
+        + acknowledge introduction
+        + NEVER INTERRUPT (and make sure they are finished)
+        + be brief and relevant
+        + be on mute when not talking
+        + address the chair (by name)
+        + take notes (with pen and paper)
+        + consider discussion confidential
+
+email
+    o 28% (11.2 hours per week) on email
+    o used for:
+        + project information
+        + informal status
+        + formal status
+        + requests for information
+        + reports
+        + submitting project docs
+        + answering questions
+    o general practices
+        + be succinct and factual (no "I think...")
+        + avoid politics
+        + limit humor
+        + know when to use CC and BCC (not CYA)
+        + get the recipient list right
+        + don't forget the attachment
+        + be careful with "important" flag
+        + reply promptly to serious messages
+        + know when other approaches are better
+    o structuring your message
+        + know desired plan and outcome
+        + effective subject line
+            - "Invitation: " in subject if it is
+            - put "Urgent: " or "FYI: " in subject
+            - give deadline if there is one
+            - skip articles, adjectives, adverbs
+        + multiple topics -> multiple emails
+        + effective message
+            - main point in first sentence
+            - no text speak (full words)
+            - specify the response you want, and when
+            - close it properly
+                . be polite
+                . good signature (cell, email, etc)
+                . proofread before send
+    o people
+        + never send an email while you're angry
+        + may be used as evidence in criminal investigations
+
+Presentations
+    o planning it
+        + paper and pencil, jot ideas
+        + plan for short attention span (8 mins)
+    o structuring content
+        + as simple as possible
+        + opening, intent and outcome
+        + content, few slides, short discussions
+            - one message per slide
+            - very few fonts (sans-serif, avoid italics), and appropriate colors
+            - inform with little text
+        + closing, intent and outcome
+    o rehearsal
+        + if it can possibly break, it will
+        + practice aloud
+        + check the room and the equipment
+        + ask for feedback
+    o when you present
+        + connect with audience
+            - tell stories
+            - look at people, scan the room
+            - smile, relax
+        + hold their attention
+            - vary elements of presentation
+            - highs and lows are essential
+            - be creative
+        + know memory limits of audience
+        + link message to things they understand
+        + tie slides together
+        + involve the audience
+    o executives
+        + they hate powerpoint
+        + don't waste their time
+        + get to the point in the first minute
+        + lead with content that appeals to gut instinct
+        + then back it up with data
+        + avoid data first
+People
+    o why
+        + people are complex
+        + complexity has an impact on your success
+    o fundamentals
+        + 
+
+--------------------------------------------------------------------------------
+
+Managing Customer Expectations
+    o perceived quality of service relative to what customer expects
+    
+Expectations that can be managed
+    o response time
+    o process
+    o policies
+    o fees
+    o uncontrolled variables
+    
+How customers develop expectations
+    o our communication
+    o past experience
+    o word of mouth
+    o other companies
+    
+How to manage these
+    o good email response time (sub-one hour)
+    o omnichannel experience -- ability to move from one communication channel to another
+        e.g., person on phone has access to all email communication
+    o self service
+    
+Marketing and verification
+    o what promises are you making
+        - delivery time
+        - response time
+        - product image
+        
+Using customer service data
+    o surveys
+    o product returns
+    o service calls
+    
+Response time
+    o validate contact info accuracy
+    o 
+    

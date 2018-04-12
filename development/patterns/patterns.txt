@@ -1,0 +1,35 @@
+Design Patterns
+---------------
+
+https://www.udemy.com/experience-design-patterns
+Based on the "gang of four" book
+
+General pattern theory
+    o definition
+        + each pattern describes a common recurring problem, and then describes the core
+                of a solution to that problem
+    o four elements of a pattern
+        + name
+        + problem
+        + solution
+        + consequences
+    o benefits
+        + better design
+        + improves team communication
+        
+Case study
+    o 3D modeler
+
+Singleton
+    o one object for the entire application
+        + or manage a fixed-size pool of objects
+    o implementation details
+        + singleton class:
+            - defines a private constructor
+            - defines a static member for the single instance
+            - defines a getInstance() that creates the instance first time, and returns it
+    o can this support inheritance, a customized singleton with additional functionality?
+        + system property naming the class that should be instantiated by getInstance()
+
+Builder
+    o problem is creating complex objects

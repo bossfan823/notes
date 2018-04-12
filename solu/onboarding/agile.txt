@@ -1,0 +1,120 @@
+Agile Project Management
+------------------------
+
+Agile Project Lifecycle Stages
+
+    o Envision
+        + happens once, at the beginning of the project
+        + project selection criteria
+            - high quality
+            - quick delivery (but multi-sprint)
+            - does not need to be delivered all at once
+            - requirements expected to change/evolve
+        + collaborate with customer to understand requirements
+        + produces a project charter document (PDS, Product Data Sheet)
+            - project scope
+            - target customer
+            - key benefits
+            - identify project manager and responsibilites
+        + team collaboration tools
+            - track/report status
+            - facilitate joint development
+            - communicate with team members
+        + team norms
+            - location
+            - rules for working together (respect, etc.)
+            - 15 or less team members
+
+    o Speculate
+        + iterate/loop over this and next two steps for each sprint
+        + in first sprint for project, estimate ALL features for the project
+        + identify features for the sprint, with estimates and risks
+            - more efficient if product owner grooms the backlog ahead of time
+            - include those not completed in last spring
+        
+    o Explore
+        + develop the features
+        + daily standup meetings
+        + honest peer reviews
+        + serious testing
+        + track slow progress
+            - resolve impediments
+            - note for lessons learned
+
+    o Adapt
+        + review what was delivered
+            - compare to plan
+            - involve customer
+            - validate correctness
+        + discuss changes to business direction
+        + lessons learned session
+            - discuss what is and is not working
+            - agree to changes
+        
+    o Close
+        + happens when no more sprints are required
+        + verify deliverables are completed
+        + redeploy team members
+
+        
+    o Signs of trouble
+        + features not being completed during sprint
+        + building wrong features
+        + team attendance issues
+        + team relying on owner to fix all problems
+
+    o User stories
+        + start with personas (users of the system)
+            - context
+            - character
+            - criteria
+        + writing good stories
+            - Independent (value)
+            - Negotiable (owner has to avoid saying "how")
+            - Valuable (requirements are not necessarily stories)
+            - Estimateable (not to big or unclear)
+            - Small
+            - Testable
+        + Epics, and when the epic comes first, how to break it down into stories
+            - Flow
+            - Effort
+            - Entry
+            - Ddata operations
+            - Business rules
+            - Alternatives
+            - Complexity
+            - Knowledge
+            
+    o Planning an agile project
+        + Agile project charter
+            - one page or less
+            - three main sections
+                . vision (why are we doing the project?)
+                . mission (how to accomplish the vision)
+                . success (how to know vision delivered)
+        + initial estimation
+            - t-shirt sizes, not precise, not a commitment
+            
+    o Agile reports
+        + goals
+            - simple
+                . same reports for team and stakeholders
+                . reports focused on improvement (simple because they are generated as part of
+                        the standard agile process)
+            - visible
+            - Kaizen, continuous improvement
+        + product backlog
+            - like a pez dispenser (lol)
+            - should only be managed by the product owner
+            - backlog grooming
+                . Detailed
+                . Estimated
+                . Emergent (changes over time)
+                . Prioritized
+        + task board
+            - standard swim lanes
+                . stories
+                . to do (tasks)
+                . doing
+                . done
+            - team members responsible for updating
