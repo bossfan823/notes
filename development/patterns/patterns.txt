@@ -16,20 +16,49 @@ General pattern theory
     o benefits
         + better design
         + improves team communication
-        
+
 Case study
     o 3D modeler
 
-Singleton
-    o one object for the entire application
-        + or manage a fixed-size pool of objects
-    o implementation details
-        + singleton class:
-            - defines a private constructor
-            - defines a static member for the single instance
-            - defines a getInstance() that creates the instance first time, and returns it
-    o can this support inheritance, a customized singleton with additional functionality?
-        + system property naming the class that should be instantiated by getInstance()
+Creational
+    o abstract the instantiation process
+    o class creational pattern
+        + uses inheritance to vary the class that is instantiated
+    o object creational pattern
+        + delegates instantiation to another object
+
+    o Abstract Factory
+        + intent
+            - provide an interface for creating families of related/dependent objects
+                    without specifying their concrete classes
+        + applicability
+            - system is configured with one of multiple families of products
+            - a family of related product objects are designed to work together, need to enforce this
+            - client works just with interfaces, no implementations
+        + structure
+            - interface for AbstractFactory
+            - interface for each AbstractProductX created by the factory
+            - two or more implementations of this set of interfaces
+            - e.g., WidgetFactory, Window, Scrollbar, etc.
+                    MotifWidgetFactory, MotifWindow, MotifScrollbar
+                    PMWidgetFactory, PMWindow, PMScrollbar
+        + consequences
+            - need non-hard-coded way to tell client which AbstractFactory to use
+            - that's it, nothing else changes, as client uses only interfaces
+        + collaborations
+            - AbstractFactory usually has Factory Methods
+
+
+    o Singleton
+        + one instance of a class for the entire application
+            - or manage a fixed-size pool of objects
+        + implementation details
+            - singleton class:
+                . defines a private constructor
+                . defines a static member for the single instance
+                . defines a getInstance() that creates the instance first time, and returns it
+        + can this support inheritance, a customized singleton with additional functionality?
+            - system property naming the class that should be instantiated by getInstance()
 
 Builder
     o problem is creating complex objects
