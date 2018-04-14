@@ -20,7 +20,7 @@ General pattern theory
 Case study
     o 3D modeler
 
-    
+
 Creational Patterns
 -------------------
     o abstract the instantiation process
@@ -66,7 +66,7 @@ Creational Patterns
                 . holds prototype objects for all types of objects it will need to create
                     (how does this collection get created, types determined?)
                 . when it needs an object, it asks the appropriate prototype to clone itself
-        
+
     o Singleton
         + intent
             - ensure only one instance of a class for the entire application
@@ -101,7 +101,7 @@ Structural Patterns
 -------------------
     o concerned with how objects/classes are composed to form larger structures
     o object composition can change at runtime, so not solved by static inheritance
-    
+
     o Adapter
         + intent
             - convert the interface of a class into another interface expected by certain clients
@@ -111,7 +111,7 @@ Structural Patterns
                 . won't work when Adaptee has sub-classes
             - object adapter, where Adapter just extends Target, and delegates to an Adaptee (e.g., provided on construction)
                 . may be fragile, as new Adaptee sub-classes are created
-    
+
     o Bridge
         + intent
             - decouple and implementation from its interface
@@ -129,11 +129,31 @@ Structural Patterns
             2. you then want to extend the interface
             3. the complete set of original implementations need to be duplicated to implement the new
                     extension of the original interface
-    
+
     o Composite
-    
+        + intent
+            - use tree structure to represent hierarchy
+            - lets client treat individual object or composition object uniformly
+        + participants
+            - Component, the base interface that can be a leaf node or a tree node
+                . has optionally implemented child acces operations
+            - Leaf, may be multiple types, but none have children
+            - Composite, a Component composed of its children
+            - Client, manipulates Component objects
+
     o Decorator
-    
+        + intent
+            - dynamically extend the functionality of an object
+        + motivation
+            - want to enhance only certain objects, not entire class
+            - done by enclosing (wrapping) the target object in a decorator class
+            - decorator conforms to components interface, while adding new functionality
+            - decorators can be nested recursively
+        + implications
+            - more flexibility than static inheritance
+            - cannot rely on object identify (decorated object is distinct from its wrapped object)
+            - not sure how the chaining workss
+
     o Facade
         + intent
             - provide a higher-level simplified interface to a set of interfaces in a subsystem
@@ -142,11 +162,16 @@ Structural Patterns
             - clients of the facade generally do not need to access the subsystem components directly
                     (but they can)
             - minimizes compile-time dependencies
-    
+
     o Flyweight
         + intent
             - use sharing to support large numbers of fine-grained objects
-    
+        + applicability
+            - large quantity of objects
+            - small number with distinct intrinsic state (characters in a document), can be shared
+            - extrinsic state can be passed in as needed (e.g., location in document)
+            - since objects are shared, application cannot depend on object identity
+
     o Proxy
         + intent
             - placeholder for another object to control access to it
@@ -154,5 +179,5 @@ Structural Patterns
             - construction is costly, so build minimal (proxy) object that can service simpler requests, but creates
                     real object once a costly operation is invoked, at which point all requests are then forwarded to
                     the real object
-                
+
 
