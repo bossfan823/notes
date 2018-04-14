@@ -20,7 +20,9 @@ General pattern theory
 Case study
     o 3D modeler
 
-Creational
+    
+Creational Patterns
+-------------------
     o abstract the instantiation process
     o class creational pattern
         + uses inheritance to vary the class that is instantiated
@@ -48,10 +50,27 @@ Creational
         + collaborations
             - AbstractFactory usually has Factory Methods
 
+    o Factory Method
+        + intent
+            - define interface for creating an object, letting subclass decide on concrete type
+                . (how is this different from Abstract Factory?)
+            - this pattern solves a smaller problem than Abstract Factory, it actually is a common
+                approach used in Abstract Factory, by have a factory method on the AbstractFactrory
+                method, to create one specific object, (e.g., createScrollbar)
 
+    o Prototype
+        + intent
+            - creates new objects by copying then customizing a prototype instance
+        + structure
+            - client
+                . holds prototype objects for all types of objects it will need to create
+                    (how does this collection get created, types determined?)
+                . when it needs an object, it asks the appropriate prototype to clone itself
+        
     o Singleton
-        + one instance of a class for the entire application
-            - or manage a fixed-size pool of objects
+        + intent
+            - ensure only one instance of a class for the entire application
+                . or manage a fixed-size pool of objects
         + implementation details
             - singleton class:
                 . defines a private constructor
@@ -60,5 +79,80 @@ Creational
         + can this support inheritance, a customized singleton with additional functionality?
             - system property naming the class that should be instantiated by getInstance()
 
-Builder
-    o problem is creating complex objects
+    o Builder
+        + intent
+            - separate problem of creating complex objects from their representations
+        + structure
+            - Builder
+                . an interface that has methods to add common parts to the ultimate complex object
+                    (in effect defining the process for assembling the final product)
+                . also has a method to create the object after all the parts have been supplied
+                . depends on the set of parts to be the same (i.e., based on the source of the parts)
+                    rather than on the new representation being created by any specific concrete builder
+            - Product
+                . abstract interface for the thing being built
+                . it is common (really?) that the various concrete products are so different that there is
+                    no need for an interface -- implies client knows which type of product is being built,
+                    and how to use its specific customized API (ugh)
+                . there must be cases where this is not true, that general operations on an abstract Product
+                    can be defined that give the client the ability to manipulate any kind of built product
+
+Structural Patterns
+-------------------
+    o concerned with how objects/classes are composed to form larger structures
+    o object composition can change at runtime, so not solved by static inheritance
+    
+    o Adapter
+        + intent
+            - convert the interface of a class into another interface expected by certain clients
+                (resolves the problem of incompatible interfaces)
+        + two approaches
+            - class adapter, where Adapter API is a combination of the Target API and the Adaptee API (multiple inheritance)
+                . won't work when Adaptee has sub-classes
+            - object adapter, where Adapter just extends Target, and delegates to an Adaptee (e.g., provided on construction)
+                . may be fragile, as new Adaptee sub-classes are created
+    
+    o Bridge
+        + intent
+            - decouple and implementation from its interface
+        + it's confusing but I think it breaks the coupling between an interface and an implementation by doing the following:
+            1. define an independent interface for the implementation (distinct from the original interface)
+            2. create a new implementation for the original interface
+            3. an instance of that implementation takes a reference to an object having the new implementation interface
+            4. implement the new class by delegating to the new implementation interface
+        + if this is right, i fail to see what benefits it provides
+        + it's unlike Adapter in that that pattern is applied after a system has been established, whereas Bridge is applied
+                up front when designing a system, to decouple the interface from the implementation
+            - but in the end, isn't the implementation of the interface just an Adapter (yes, i think)
+        + benefit comes (i think) when:
+            1. there are a number of implementation of the hierarchy
+            2. you then want to extend the interface
+            3. the complete set of original implementations need to be duplicated to implement the new
+                    extension of the original interface
+    
+    o Composite
+    
+    o Decorator
+    
+    o Facade
+        + intent
+            - provide a higher-level simplified interface to a set of interfaces in a subsystem
+        + implications
+            - subsystem components are unaware of the facade
+            - clients of the facade generally do not need to access the subsystem components directly
+                    (but they can)
+            - minimizes compile-time dependencies
+    
+    o Flyweight
+        + intent
+            - use sharing to support large numbers of fine-grained objects
+    
+    o Proxy
+        + intent
+            - placeholder for another object to control access to it
+        + motivation
+            - construction is costly, so build minimal (proxy) object that can service simpler requests, but creates
+                    real object once a costly operation is invoked, at which point all requests are then forwarded to
+                    the real object
+                
+
