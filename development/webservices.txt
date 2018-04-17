@@ -40,3 +40,128 @@ XML (Extensible Markup Language)
             - format is defined by W3C
         + XSD defines a contract
 
+
+SOAP
+----
+Simple Object Access protocol
+
+    o Concepts
+        + previously
+            - Browser --- http --> Web Server
+            - Browser <-- html --- Web Server
+        + now
+            - Client --- http --> Web Service
+            - Client <-- xml  --- Web Service
+        + advantages
+            - platform independence (HTTP + XML)
+            - enables application customization
+            - new revenue/profit channels (charge by #calls)
+            - firewall friendly
+        + disadvantages
+            - ambiguous standards
+            - performance due to serialization/deserialization
+        + when to use SOAP
+            - formal contract is required (WSDL)
+            - non-functional requirements (e.g., security, transactions)
+                . standards available with SOAP
+            - reliable async processing
+                . again, available out of the box
+        + w3c defines standard formats
+            - SOAP messages are XML documents
+            - soap:Envelope is the main element
+            - soap:header
+                . meta information, e.g. security (user/password)
+            - soap:Body
+                . app-defined payload, for requests and responses
+                . may be a soap:Fault for a request failure
+        + WSDL (Wed Services Description Language)
+            - describes
+                . what the web service describes
+                . how it provides it and how to consume it
+            - portions
+                . abstract: what
+                . physical: how
+            - xml elements, abstract
+                . wsdl:definitions, the root element
+                . wsdl:types, local schema
+                . wsl:message, requests and responses, with their payload types
+                . wsdl:operation, named, pairs a request to a response
+                . wsdl:portType, contains all operations (not sure what it is)
+            - xml elements, physical
+                . wsdl:binding, also has wsdl:operation elements
+                    - soap:binding, one of the elements
+                . wsdl:service, address of web service
+            - binding styles
+                . binding element, style attribute
+
+    o Design
+        + top down (wsdl first)
+            - steps
+                1. create the .wsdl file
+                2. generate java stubs (e.g., wsdl2java)
+                3. implement web service endpoints
+            - advantages
+                . customer signs off
+                . better interoperability
+                . faster integration
+        + bottom up (code first)
+            - steps
+                1. write annotated java code
+                2. generate wsdl (e.g., java2wsdl)
+            - advantages
+                . legacy app integration
+        + do top down unless exposing legacy app services
+
+    o JAX-WS
+        + annotations
+            - in the javax.jws package
+            - @WedService
+                . annotate class to define an endpoint
+            - @WebMethod
+                . annotate to define an operation
+            - @WebResult
+                . annotate the result of an operation
+            - @WebParam
+                . annotate a parameter to an operation
+            - @javax.xml.ws.WedFault
+                . annotate our exception class to cause it to generate a soap:fault
+            - @javax.jws.soap.SOAPBinding
+                - defaults to 'document/literal'
+                - override, style=Style.RPC, use=USE.LITERAL
+
+    o JAXB (Java Architecture for XML Binding)
+        + converts between Java objects and XML
+        + three tools
+            - XJC
+                . converts XML to Java classes
+                . it's a schema compiler
+            - SCHEMAGEN
+                . generates XML schema from Java classes
+            - Runtime API
+                . converts between Java objects and XML
+                . marshall
+                . unmarshall
+                . annotations
+
+
+Apache CXF
+----------
+    o java web services stack
+    o it's a web service engine
+    o supports both JAX-WS and JAX-RS
+    o can act as both a provider and a consumer
+    o implements web service standards (e.g., WS-Security)
+
+    o Spring boot
+        + cfx dependency: cfx-spring-boot-starter-jaxrs
+        + application.properties
+            - cxf.jaxrs.component-scan=true
+        
+    o creating a SOAP project
+        + steps
+            1. create the project
+                - new Project -> Spring Starter Project
+            2. create the endpoint
+            3. create the config class
+            4. run the application
+            

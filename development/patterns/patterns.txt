@@ -97,6 +97,7 @@ Creational Patterns
                 . there must be cases where this is not true, that general operations on an abstract Product
                     can be defined that give the client the ability to manipulate any kind of built product
 
+
 Structural Patterns
 -------------------
     o concerned with how objects/classes are composed to form larger structures
@@ -181,3 +182,144 @@ Structural Patterns
                     the real object
 
 
+Behavioral Patterns
+-------------------
+    o concerned with algorithms and assignment of responsibilities
+    o patterns of communication between objects
+
+    o Chain of Responsibility
+        + intent
+            - avoid coupling the sender of a request to its handler
+            - chain handlers together, and pass request along chain until handled
+            - do all handlers get a chance to process the request?
+                . book doesn't say so, but course does
+
+    o Command
+        + intent
+            - encapsulate a request as an object
+        + motivation
+            - from a UI framework perspective, it's like attaching a callback object to a button object,
+                to be invoked when the button is pressed
+            - the callback is a Command object, and it decouples the button object from knowing anything
+                about what actually happens when the button is pressed
+            - the application associates the appropriate Command object with the button object
+            - obviously, the Command interface supports some type of execute() method
+        + consequences
+            - one form of Command can keep a chain of other Command objects, so that a sequence of operations
+                can be performed in response to the initial request (so this is multi-command chaining, not
+                something Chain of Responsibility should do)
+
+    o Interpreter
+        + intent
+            - given a language, define a representation for its grammar
+            - the interpreter knows how to process elements of that representation
+        + motivation
+            - regular expressions are a good example
+            - define a class for each element in the syntax definition of a regular expression
+            - a particular regular expression must be represented as a syntax tree structure
+            - should only be applied to relatively simple grammars
+
+    o Iterator
+        + intent
+            - way to sequentially access elements of a collection without exposing the underlying
+                representation of the collection
+        + motivation
+            - don't want to bloat the collection interface with methods for visiting its elements
+                in various ways
+            - you also want to support multiple concurrent traversals over the elements
+            - want the application to be able to iterate the same way regardless of the type of collection,
+                    event possibly without knowing the specific type of collection
+                . implies application cannot construct the Iterator object, it must be constructed by a
+                    factory method on the collection object itself
+
+    o Mediator
+        + intent
+            - object that encapsulates how a set of objects interact
+            - keeps objects from referring to each other explicitly
+        + motivation
+            - solve the problem like a dialog box with button, entry, list etc. widgets where the input
+                    into one widget triggers reconfiguration of other widgets, and don't want each widget,
+                    which should be a basic toolkit object, to have to be subclassed to cause these types
+                    of changes to the UI
+            - create a "hub" class that all the coordinating objects communicate with, rather than with each other
+                . reduces the complexity and coupling
+                . changes many-to-many dependencies to many-to-one
+
+    o Memento
+        + intent
+            - capture an object's internal state so that it can be restored later
+            - cannot break encapsulation (e.g., objects private internal state)
+        + motivation
+            - this is mainly for restoring an object to a previous state (i.e., for undo)
+            - it does not require the memento to be persisted
+        + participants
+            - Originator, object whose state must be saved
+                . this object is the one that creates the Memento object and restores from it
+            - Memento, defined by the Originator to hold whatever state it needs to restore itself
+
+    o Observer
+        + intent
+            - define a one-to-many relationship so that when one object changes state, all of its
+                    dependents are notified and updated automatically
+            - AKA Pub/Sub (publish-subscribe)
+            - how is this different from Mediator?
+                . does not use a separate object to coordinate, instead an object whose state is important
+                        to other objects notifies them when it changes state (i.e., because they subscribed)
+
+    o State
+        + intent
+            - allow an object to alter its behavior when its internal state changes
+            - object appears to have changed its class
+        + participants
+            - Context, object whose behavior changes based on state
+            - State, interface for operations that vary by Context state
+            - ConcreteState subclasses, implement interface for a particular state
+            - Context has a state member that is assigned the appropriate ConcreteState subclass, and
+                state-dependent operations on Context are delegated to its state member
+
+    o Strategy
+        + intent
+            - encapsulate a family of algorithms so that they are interchangeable
+            - lets an algorithm vary independently from the client that uses it
+
+    o Template Method
+        + intent
+            - define the skeleton of an algorithm, deferring some steps to abstract methods
+                    defined by subclasses
+            - subclass can redefine certain steps without changing the algorithms structure
+
+    o Visitor
+        + intent
+            - represent an operation to be performed on the elements of an object structure
+            - new operations can be added without modifying the element classes
+        + motivation
+            - want to avoid adding same operation(s) (print, render, etc.) to all element classes
+                . clutters the classes from their main function
+                . difficult to add a new operation
+            - instead define a Visitor interface, that has a visit method for each element class
+                . implement the interface for each operation
+                . has the benefit of encapsulating the operation code in a single class rather than it
+                        being distributed across all of the element classes
+        + consequences
+            - each element class must have a method, accept(Visitor), where it calls visitor.visit(this)
+        + drawbacks
+            - when new element class is created, all Visitors need to be updated to handle it
+
+
+Additional Patterns
+-------------------
+
+    o Inversion of Control
+        + intent
+            - object releases control of the creation process for its dependencies
+            - object lets other components decide what it should use
+        + approach
+            - dependency injection (using an IoC container, like spring)
+
+    o Data transfer object
+        + intent
+            - bundle all data that must be transferred from one process to another
+            - applies when a facade service is created to wrap multiple service calls that manipulate
+                the heavier-weight system business objects
+        + participants
+            - DTO, has just data, no behavior (getters and setters?)

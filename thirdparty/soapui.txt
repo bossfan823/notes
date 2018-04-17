@@ -1,0 +1,59 @@
+SoapUI Notes
+============
+
+https://www.soapui.org/open-source.html
+
+What is it?
+    o functional testing tool for both SOAP and REST
+    o automated testing tool
+
+Testing tools (many only available in Pro edition)
+    o functional testing
+        + for non-developers
+        + drag-and-drop, code-free
+        + supports test suites, test cases, assertions
+        + can validate login procedure
+
+    o service simulation (mocking)
+        + given a WSDL, can simulate a web server without writing any code
+        + highly configurable mock responses
+
+    o security testing
+        + test you web services for security vulnerabilities
+        + special capability for testing for SQL injection failures
+        + special capability for testing handling of large inputs
+
+    o load testing
+        + easily created from existing functional tests
+        + supports many pre-defined load strategies
+        + includes assertions for performance validation
+
+    o technology support
+        + supports many protocols
+
+    o automation
+        + supports many continuous delivery systems
+        + maven support
+        + junit support
+        + runnable from any tool like Jenkins, GoCD, etc.
+
+First SoapUI session
+
+
+Ten tips for beginners
+    1. right click your way around
+        - most features are accessed via context menus
+    2. place your tests in a test case
+        - their structure: test suite, test case, test step
+        - other features work better when this structure is followed
+    3. use meaningful names for test components
+    4. use assertions in your tests
+    5. learn how to transfer properties
+        - specifically, something from a response into the next request
+        - e.g., session id from login, needed in all subsequent requests
+    6. read the responses
+    7. read the log
+    8. do a quick load test
+    9. RTFM
+    10. be active in the soapui community
+        
