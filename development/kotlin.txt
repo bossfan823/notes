@@ -1,0 +1,45 @@
+Kotlin
+======
+
+    o 100% interoperable with Java
+    o statically typed
+    o primarily designed to reduce need for boilerplate code (e.g., getters/setters)
+
+Concise
+    o 'data class', creates a POJO with one line, includes:
+        + getters/setters
+        + equals() and hashCode()
+        + toString()
+        + copy()
+    o 'object', creates a Singleton
+    o 'val', filters a list using lambda
+
+Safe
+    o eliminate NullPointerExceptions
+        - generates compiler error if null pointer referenced
+    o allows declaration of references that cannot be null
+        - again, compiler error if ever set to null
+    o if instanceof confirms a type
+        - autocasts object to that type
+
+Interoperable
+    o use any JVM class
+    o target either JVM or JavaScript
+
+Reference Overview
+    o standard library
+        + has kotlin packages with complimentary Java classes/helpers
+
+    o basic syntax
+        + packages
+            - like java, but...
+            - not required to match the directory structure
+                . why is this a good thing?
+        + imports
+            - lots of the kotlin packages are imported by default
+            - nice feature: import bar.Bar as bBar // to disambiguate
+    o functions
+        + all methods are declared 'fun'?
+        + syntax: fun <name>(<arg1>: <type1>,...): <return-type>
+            - 'Unit' stands for no return, can be omitted
+    

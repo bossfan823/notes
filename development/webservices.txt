@@ -165,3 +165,6 @@ Apache CXF
             3. create the config class
             4. run the application
             
+    o top down approach
+        + steps
+            1. create wsdl

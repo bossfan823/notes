@@ -1,0 +1,90 @@
+Developing in CA
+================
+
+    o Oracle database
+        + password for sys and system: dba
+        + user to run appserver(?): SPR/password
+        + user to run app: ppayroll/password
+
+    o to build a new database from scracth
+        + . setant
+        + cd-cadomain
+        + ant db.setup
+            - creates SPR(?) user: SPR/password
+
+    o upgrading database after pull
+        + . setant
+        + cd-cadomain
+        + ant db-update.views
+        + ant db.upgrade
+        + ant db.loadprivate
+        + OR, 'ca-updb' to do all of this
+
+    o building
+        + . setant
+        + cd-ca
+        + ant clean dist
+        + OR, 'ca-build' (cd-ca && ant veryclean dist.all)
+
+    o starting the CA appserver
+        + . setant
+        + cd-cadomain
+        + ant appserver.start
+        + OR, ca-start
+        
+    o administration
+        + SPR Admin page: http://localhost:8080/admin/
+        + login: administrator/password
+        
+    o production support
+        + Copy Client
+            - https://wiki.paychex.com/pages/viewpage.action?pageId=37069760
+            - see my git repo, D:\work\git\payroll_copy_client
+            - tools in D:\work\solu\CopyClient
+            - copies all data for one client, creates SQL file for loading into a test database
+
+        + Cloning Production DB
+            - https://wiki.paychex.com/display/PAYDEV/Cloning+Production+DBs
+            - aka Delphix
+            - should be tested with client version of software
+                . problems may occur if patched (plus the problem may no longer occur)
+
+        + Data Portal
+            - https://wiki.paychex.com/pages/viewpage.action?pageId=78817193
+            - fetches data stored outside the CA database
+                . sources not SQL databases, rather directory structure data
+                . accessed via SOAP/REST interfaces
+
+
+CA Framework
+------------
+https://wiki.paychex.com/display/PSP/PSP+Introduction
+
+    o web services
+        + currently being added to CA
+        + long-term goal of service oriented architecture (SOA)
+
+    o platform
+        + to support new web services
+        + created a custom web service platform for CA
+            - decided against using any open source solutions
+        + platform concepts
+            - interface driven development
+                . does not use stub/skeleton model
+        + annotation driven development
+            - lets the platform couple a service's metadata to its source code
+        + development interoperability
+            - service use/impl very similar to other payroll software
+            - other processes are identical: reviews, unit testing, documentation
+            - minimal deployment changes
+        + employs Pipe and Filter pattern
+        + minimal dependencies
+            - Java 1.5+
+            - log4j
+            - JAX-WS (SOAP)
+        + platform components
+            - Core Framework
+                . reusable component (completed decoupled from CA)
+                . mainly a wrapper around JAX-WS
+            - CA Domain Integration
+                . WSDL-first style

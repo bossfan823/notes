@@ -1,0 +1,8 @@
+Spring Boot Notes
+=================
+
+https://projects.spring.io/spring-boot/#quick-start
+
+Overview
+    o like maven, opinionated, convention over configuration
+    o most applications need very little configuration

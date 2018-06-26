@@ -1,0 +1,74 @@
+CHUD
+====
+Creative Humans Under Duress
+https://wiki.paychex.com/display/EP/CHUD+Team
+
+Projects
+    o Client Onboarding Center (COC)
+        + previously Paychex Account Migration Tool
+            - how does this relate to PACO (Paychex Automated Client Onboarding)?
+                . this seems like a term referring to the new system
+                . actually, don't think so ... this appears to be for new clients,
+                        new system is to "migrate" existing clients
+                . or not ... "migrate" may mean convert from client's current source data to
+                        form need to import to CA
+        + OBC is a new 2018 tool designed to provide more automation and reliability when
+                loading new clients
+            - PACO is the proces for onboarding new clients
+            - OBC integrate into PACO by taking inputs at an early stage in PACO, improving the content
+                    of the data, then resubmitting the improved files back into the PACO pipeline
+            - PACO ultimately submits its data to CA
+            - OBC has a schema in the Local SQL Server database
+            - some design pages show OBC submitting data directly to CA
+
+    o JavaCPT
+
+    o AMA (Automated Migration Application)
+        + newer pages suggest its output bypasses PACO, goes directly to CA
+        + i think this is a test database for clients to be migrated:
+                jdbc:ucanaccess:////DEV-D-91Z9D/chud/PACOdb/PTF_be_dev.accdb
+                jdbc driver here: http://ucanaccess.sourceforge.net/site.html
+        + older process
+            - use Configurator and PACO to gather client information
+            - submitted to CA using App2App interface
+        + new AMA process
+            - does not "directly" use Configurator or PACO
+            - accesses Configurator's MS Access database for MMS client info
+            - generates XML passed to CA via App2App
+            - PACO eliminated
+            - monitors the same directories for files dropped for submission to CA
+                . actually, may be a separate shared application, SubmitInfoPath
+                
+    o CA Comparator (Client Audit Tool)
+        + validates effectiveness of a client import from MMS
+            - by comparing client data as seen in MMS and post-import CA
+
+
+Testing
+    O ATM (Adaptive Test Management)
+        - manages manual test cases
+        - replaces HP's ALM tool
+        - tests accessible here: https://issues.paychex.com/secure/Tests.jspa#/design?projectId=12808
+    o TAF
+        - selenium-based UI test framework
+        - AutomationManager lets testers script the tests
+        - AutomationCenter executes the tests
+        
+
+PROBLEM
+    o could not run SQL Server Configuration Manager, or Services
+        + failing due to something about a snap-in
+        + mmc is used to manage snap-ins
+        + could not run mmc
+            - see https://becomethesolution.com/you-cannot-open-microsoft-management-console-in-author-mode-because-of-current-computer-policies
+            - in HKEY_CURRENT_USER\Software\Policies\Microsoft\MMC
+                . set RestrictAuthorMode to 0 (this lets mmc run)
+                . set RestrictToPermittedSnapins to 0 (lets mmc create missing snap-ins automatically)
+
+Local SQL Server
+    o let install in default C: directories (both)
+    o Instance name/ID: SQLExpress/SQLEXPRESS
+    o mixed mode authentication: sa/passwordPASSWORD1
+    o add user: automigrate/password
+        + owner of new database: FlexMigrationsToolDB
+

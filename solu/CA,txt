@@ -1,0 +1,37 @@
+Core Advanced (CA)
+==================
+
+    o related systems (?)
+        + Core Advanced
+            - a payroll system
+        + Paychex Flex
+        + Preview (MMS?)
+
+    o used to:
+        + enter company information
+            - includes company product info
+            - billing and payee maintenance
+        + enter employee information
+        + process payroll
+        + additional features (to Preview)
+            - client service activities (CSA)
+                . check templates
+                . time off accrual (TOA) policies
+            - effective dating
+            - reports (more than 140)
+                . standard payroll reports
+                . preprocessing reports
+                . fulfillment/data integrity reports
+                . on-demand reports
+                - business objects
+        + Net Pay calculation is
+            wages/salary
+            + other earnings
+                . taxable (may have special rules)
+                . may add to net pay or not (add to compensation only for taxing)
+            + reimbursements and other payments
+            - taxes
+            - deductions
+                . subtract from net pay
+                . may have specific taxability
+           

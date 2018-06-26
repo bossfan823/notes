@@ -1,0 +1,13 @@
+IntelliJ IDEA Notes
+===================
+
+https://www.jetbrains.com/idea/
+
+Comparison to eclipse
+    o no workspace
+        + one project at a time
+        + project may be comprised of multiple modules
+        + can simulate multi-project eclipse workspace with a multi-module project
+    o no perspectives
+        + intellij is context sensitive, brings up "right" views
+        + can this be configured?
